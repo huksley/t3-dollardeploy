@@ -11,6 +11,16 @@ export default async function HomePage() {
           Create <span className="text-[hsl(280,100%,70%)]">T3</span> App
         </h1>
 
+        {/* Show sign in email */}
+        {session?.user?.email && (
+          <div className="rounded-xl bg-white/5 px-6 py-3 text-center">
+            <span className="text-sm text-white/75">Signed in as</span>
+            <p className="mt-1 font-medium text-[hsl(280,100%,70%)]">
+              {session.user.email}
+            </p>
+          </div>
+        )}
+
         {/* Auth buttons */}
         <div className="flex gap-4">
           {!session?.user ? (
